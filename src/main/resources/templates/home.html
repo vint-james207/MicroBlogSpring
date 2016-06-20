@@ -5,8 +5,27 @@
     <input type="text" name="username" placeholder="Enter your name"/>
     <button type="submit">Login</button>
 </form>
+{{/username}}
 <br>
-
+{{#username}}
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+<br>
+<form action="/addmessage" method="post">
+    <input type="text" name="text" placeholder="Enter message here"/>
+    <button type="submit">Enter</button>
+</form>
+<h1>Messages by {{username}}:</h1>
+{{#messages}}
+<ol>
+    <li>{{text}}</li>
+    <form action="/deletemessage" method="post" style="display: inline;">
+        <input type="hidden" name ="id" value="{{id}}"/>
+        <button type="submit">Delete</button>
+    </form>
+</ol>
+{{/messages}}
 </body>
 {{/username}}
 </html>
