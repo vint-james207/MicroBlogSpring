@@ -20,7 +20,7 @@
 {{#messages}}
 <ol>
     <li>{{text}}</li>
-    <form action="/deletemessage" method="post" style="display: inline;">
+    <form action="/deletemessage" method="post" style="display: inline-block">
         <input type="hidden" name ="id" value="{{id}}"/>
         <button type="submit">Delete</button>
     </form>
