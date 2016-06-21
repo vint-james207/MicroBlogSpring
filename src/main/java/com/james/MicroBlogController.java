@@ -54,9 +54,11 @@ public class MicroBlogController {
         return "redirect:/";
     }
 
-    @RequestMapping(path = "/edit-message", method = RequestMethod.GET)
+    @RequestMapping(path = "/editmessage", method = RequestMethod.POST)
     public String editMessage(Integer id, String text) {
-
+        Message message = new Message(id, text);
+        messages.save(message);
+        return "redirect:/";
     }
 
     @RequestMapping(path = "/logout", method = RequestMethod.POST)

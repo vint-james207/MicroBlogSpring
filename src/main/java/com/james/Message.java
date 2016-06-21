@@ -1,15 +1,14 @@
 package com.james;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+
+import javax.persistence.*;
 
 /**
  * Created by jamesyburr on 6/20/16.
  */
 @Entity
-
+@Table(name = "messages")
 public class Message {
     @Id
     @GeneratedValue
